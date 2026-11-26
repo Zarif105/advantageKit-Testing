@@ -38,16 +38,21 @@ public class Elevator extends SubsystemBase {
 
 
   public Elevator() {
+
+    elevatorInputs= new ElevatorIOInputsAutoLogged();
+
     switch (Constants.currentMode) {
       case REAL:
         elevatorIO = new ElevatorIOReal();
+        break;
 
       case SIM:
         elevatorIO = new ElevatorIOSim();
+        break;
 
       case REPLAY:
         elevatorIO = new ElevatorIO() {};
-      break;
+        break;
     }
   }
 
